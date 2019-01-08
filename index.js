@@ -4,7 +4,7 @@ const PORT    = process.env.PORT || 5000
 
 // Route handler, listen for GET request
 app.get( '/', ( req, res ) => {
-	res.send( { hi: 'there' } )
+	res.send( { bye: 'buddy' } )
 })
 
 app.listen( PORT )
