@@ -5,7 +5,7 @@ module.exports = {
 	googleStrategy: {
 		clientID    : process.env.GoogleClientID || keys.GoogleClientID,
 		clientSecret: process.env.GoogleClientSecret || keys.GoogleClientSecret,
-		callbackURL : '/auth/google/callback'
+		callbackURL : process.env.GoogleAuthCallback || keys.GoogleAuthCallback // or Proxy: true
 	},
 	mongoDB: {
 		uri     : process.env.MongoDBUri || keys.mongoDBUri,
