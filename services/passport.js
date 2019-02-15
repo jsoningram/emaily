@@ -7,7 +7,7 @@ const config         = require( '../config' )
 const User = mongoose.model( 'users' )
 
 passport.serializeUser( ( user, done ) => {
-	console.log( 'Serialize User', user.id )
+	console.log( 'Serialize User', user )
 
 	done( null, user.id )
 })

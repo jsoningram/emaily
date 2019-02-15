@@ -18,6 +18,6 @@ module.exports = {
 		enableLogging: true
 	},
 	production: {
-		enableLogging: process.env.EnableLogging || false
+		enableLogging: process.env.REACT_APP_ENABLE_LOGGING 
 	}
 }
