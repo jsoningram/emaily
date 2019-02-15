@@ -3,7 +3,7 @@ module.exports = {
 		siteTitle: 'Emaily',
 		routes: {
 			googleAuth : '/auth/google',
-			currentUser: 'api/current_user',
+			currentUser: '/api/current_user',
 			logOut     : '/api/logout',
 			stripe     : '/api/stripe'
 		},
