@@ -14,8 +14,10 @@ module.exports = {
 	development: {
 		localProxyServer: {
 			uri: 'http://localhost:5000'
-		}
+		},
+		enableLogging: true
 	},
 	production: {
+		enableLogging: process.env.EnableLogging || false
 	}
 }

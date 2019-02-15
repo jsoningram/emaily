@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Connector from '../utilities/Connector'
 import * as actions from '../actions'
 import Payments from './Payments'
+import Logger from '../utilities/Logger'
 
 const common = require( '../config' )['common']
 
@@ -67,6 +68,8 @@ class Header extends Component {
 	}
 
 	render() {
+		Logger._log( 'Header.render', this.props )
+
 		return (
 			<nav style={ inlineStyles.nav }>
 				<div className="nav-wrapper">
