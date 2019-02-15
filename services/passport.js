@@ -25,34 +25,24 @@ passport.deserializeUser( ( id, done ) => {
 passport.use(
 	new GoogleStrategy(
 		config.googleStrategy,
-		( accessToken, refreshToken, profile, done ) => {
+		async ( accessToken, refreshToken, profile, done ) => {
 			const { id, name: { familyName }, name: { givenName } } = profile
 
-			console.log( 'Google Profile Received', id, givenName, familyName )
+			const existingUser = await User.findOne({ googleId: id })
 			
-			User.findOne({
-				googleId: id
-			}).exec( ( err, existingUser ) => {
-				console.log( 'Mongo Response', err, existingUser )
+			if ( existingUser ) {
+				return done( null, existingUser )
+			}
 
-				if ( existingUser ) {
-					console.log( 'User already in DB' )
-					
-					done( null, existingUser )
-				} else {
-					// Create new Mongoose model instance represting a single
-					// record from the collection
-					new User({
-						googleId : id,
-						firstName: givenName,
-						lastName : familyName
-					}).save().then( ( user ) => {
-						console.log( 'New user added', user )
-
-						done( null, user )
-					})
-				}
-			})
+			// Create new Mongoose model instance represting a single
+			// record from the collection
+			const user = await new User({
+				googleId : id,
+				firstName: givenName,
+				lastName : familyName
+			}).save()
+			
+			done( null, user )
 		}
 	)
 )

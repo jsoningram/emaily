@@ -13,5 +13,9 @@ module.exports = {
 		password: process.env.MongoDBPassword || keys.mongoDBPassword
 	},
 	cookieKey : process.env.CookieKey || keys.cookieKey,
-	cookieKeys: process.env.CookieKeys || keys.cookieKeys
+	cookieKeys: process.env.CookieKeys || keys.cookieKeys,
+	stripe: {
+		publishableKey: process.env.StripePublishableKey || keys.stripePublishableKey,
+		secretKey     : process.env.StripeSecretKey || keys.stripeSecretKey,
+	}
 }
