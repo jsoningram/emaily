@@ -36,7 +36,7 @@ app.use( bodyParser.json() )
 app.use( cookieSession({
 	name  : 'session', // Default name
 	maxAge: 30 * 24 * 60 * 60 * 1000,
-	keys  : config.cookieKeys
+	keys  : [ config.cookieKey ]
 }))
 
 app.use( passport.initialize() )
