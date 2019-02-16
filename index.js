@@ -62,5 +62,4 @@ if ( 'production' === process.env.NODE_ENV ) {
 
 app.listen( PORT )
 
-console.log( `Express listening on port ${ PORT } ${ __dirname }
-` )
+console.log( `Express listening on port ${ PORT }` )
