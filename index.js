@@ -7,6 +7,7 @@ const PORT          = process.env.PORT || 5000
 const bodyParser    = require( 'body-parser' )
 
 require( './models/User' )
+require( './models/Survey' )
 require( './services/passport' )
 
 mongoose.connect( config.mongoDB.uri, {
@@ -47,6 +48,7 @@ app.use( passport.session() )
 require( './routes/auth/google' )( app )
 require( './routes/user' )( app )
 require( './routes/billing' )( app )
+require( './routes/survey' )( app )
 
 if ( 'production' === process.env.NODE_ENV ) {
 	// Express will serve up production assets (css/main.js)
