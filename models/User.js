@@ -7,7 +7,8 @@ const userSchema = new Schema({
 	firstName: String,
 	lastName : String,
 	credits  : { type: Number, default: 0 },
-	payments : { type: Array, default: [] }
+	payments : { type: Array, default: [] },
+	surveys  : { type: Array, default: [] }
 })
 
 mongoose.model( 'users', userSchema )
