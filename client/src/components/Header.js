@@ -10,7 +10,8 @@ const common = require( '../config' )['common']
 
 const inlineStyles = {
 	nav: {
-		backgroundColor: '#666'
+		backgroundColor: '#666',
+		marginBottom: '50px'
 	},
 	logo: {
 		paddingLeft: '10px',
