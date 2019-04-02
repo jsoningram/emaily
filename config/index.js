@@ -17,5 +17,9 @@ module.exports = {
 	stripe: {
 		publishableKey: process.env.StripePublishableKey || keys.stripePublishableKey,
 		secretKey     : process.env.StripeSecretKey || keys.stripeSecretKey,
-	}
+	},
+	sendGrid: {
+		apiKey: process.env.SendGridApiKey || keys.sendGridApiKey
+	},
+	redirectDomain: process.env.RedirectDomain || 'http://localhost:3006'
 }
