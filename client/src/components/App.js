@@ -4,15 +4,10 @@ import { connect } from 'react-redux'
 import * as actions from '../actions'
 import Header from './Header'
 import Landing from './Landing'
-
-// eslint-disable-next-line
-//const common = require( '../config' )['common']
-//const env    = process.env.NODE_ENV || 'development'
-//const config = require( '../config' )[ env ]
+import NewSurvey from './NewSurvey'
+import Dashboard from './Dashboard'
 
 // Dummy componenets
-const Dashboard = () => <h2>Dashboard</h2>
-const NewSurvey = () => <h2>New Survey</h2>
 const NotFound  = () => <h2>404</h2>
 
 class App extends Component {

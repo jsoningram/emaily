@@ -1,8 +1,6 @@
 import { FETCH_USER } from '../actions/types'
 
 export default function ( state = null, action ) {
-	console.log( 'Action:', action )
-	
 	switch ( action.type ) {
 	case FETCH_USER.SUCCESS:
 		return action.payload || false
