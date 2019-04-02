@@ -5,7 +5,8 @@ module.exports = {
 			googleAuth : '/auth/google',
 			currentUser: '/api/current_user',
 			logOut     : '/api/logout',
-			stripe     : '/api/stripe'
+			stripe     : '/api/stripe',
+			surveys    : '/api/surveys'
 		},
 		stripe: {
 			publishableKey: process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
